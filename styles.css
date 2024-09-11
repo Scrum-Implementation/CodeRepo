@@ -1,0 +1,33 @@
+.container {
+    width: 100%; 
+    max-width: 400px; 
+    padding: 20px;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: darksalmon;
+    vertical-align: middle;
+    border-radius: 20px;
+}
+.desc-input-field {
+    width: 50%;
+    height: 100px;
+    
+}
+.input-field {
+    width: 50%;
+}
+.date-input-field {
+    width: 24.5%;
+}
+.date-input-container {
+    width: 100%;
+    
+}
+
+
+body{
+    width: 100%;
+    align-items: center; 
+    text-align: center;
+}
