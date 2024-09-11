@@ -7,19 +7,49 @@
     <title>Document</title>
 </head>
 <body>
-    <div class = "container">
-        <h3>New Task</h3>
-        <form action = "mainpage.php" id = "contact-form">
-                <label for="title">Title</label>
-                <input type="text" id="title" name="title" placeholder="Title"  class="input-field" value=""><br><br>
-                <label for="description">Description</label>
-                <textarea id="description" name="description" id=""></textarea><br><br>
-            <div class="date-input-container"> 
-                <input type="date" class="date-input-field" value="">
-                <input type="date" class="date-input-field" value="">
-            </div>
-        </form>
+    <div class="nothing">
+        <div class = "container">
+            <h3>New Task</h3>
+            <form action = "mainpage.php" id = "contact-form">
+                    <label for="title">Title</label><br><br>
+                    <input type="text" id="title" name="title" placeholder="Title"  class="input-field" value=""><br><br>
+                    <label for="description">Description</label><br><br>
+                    <textarea class="desc-input-field" id="description" name="description" id=""></textarea><br><br><br>
+
+                <div class="date-input-container"> 
+                    <div class="date-label-one">
+                        <label for="start-date">Start Date</label><br><br>
+                        <input type="date" id="start-date" name="start-date" class="date-input-field" value="">
+                    </div>
+                    <div class="date-label-two">
+                        <label for="end-date">End Date</label><br><br>
+                        <input type="date" id="end-date" name="end-date" class="date-input-field" value="">
+                    </div>
+                    
+                   
+                </div>
+            </form>
+        </div>
+    
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Due date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--  PHP/JS function to show table data   -->
+                </tbody>
+            </table>
+        </div>
     </div>
+    
+   
+
+
 
 
 </body>
