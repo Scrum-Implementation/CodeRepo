@@ -1,14 +1,5 @@
 <?php
-$servername = "localhost:3306";
-$username = "root";
-$password = "";
-$dbname = "todo_db";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'connection.php';
 
 $sql = "SELECT * FROM todos";
 $result = $conn->query($sql);
