@@ -1,3 +1,9 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +16,7 @@
     <div class="nothing">
         <div class = "container">
             <h1>New Task</h1>
-            <form action = "mainpage.php" id = "contact-form">
+            <form action = "taskmanagement.php"  method="POST" id = "contact-form">
 
                 <div class="labels">
                     <label for="title"><b>Task Title</b></label><br><br>
@@ -20,7 +26,7 @@
                 <div class="labels">
                     <label for="description"><b>Task Description</b></label><br><br>
                 </div>          
-                    <textarea class="desc-input-field" placeholder="  Type your task description"  id="description" name="description" id=""></textarea><br><br><br>
+                    <textarea class="desc-input-field" placeholder="  Type your task description"  id="description" name="description"></textarea><br><br><br>
 
                 <div class="labels">
                     <label for="start-date"><b>Due Date</b></label><br><br>
@@ -48,7 +54,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!--  PHP/JS function to show table data   -->
+
+                    <?php  include 'fetchdata.php';  ?>
+                                  
                 </tbody>
             </table>
         </div>
