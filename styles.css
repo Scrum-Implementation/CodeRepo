@@ -80,7 +80,9 @@ body{
     height: 100%;
     align-items: center; 
     text-align: center;
-    background-color: rgb(251, 229, 209);
+    background-image: url("OIP.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .nothing{
     display: flex;
