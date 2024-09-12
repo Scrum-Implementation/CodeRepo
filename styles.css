@@ -8,13 +8,26 @@
     margin: 20px;
   
 }
+
+.labels{
+    text-align: left;
+    padding-left: 35px;
+
+}
+
+
 .desc-input-field {
     width: 85%;
     height: 300px;
+    border: none;
+    border-radius: 20px;
     
 }
 .input-field {
     width: 85%;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
 }
 .date-input-field {
     width: 75%;
@@ -29,6 +42,7 @@
 .date-label-one{
     flex: 1;
     text-align: center;
+
 }
 .date-label-two{
     flex: 1;
@@ -52,9 +66,8 @@
 
 table {
     width: 70%;
-    border-collapse: collapse;
-    margin-top: 20px;
     color: #000000;
+
 }
 
 table th, table td {
@@ -69,7 +82,7 @@ table th, table td {
 }
 .data-table th, .data-table td {
     border: 1px solid #000000;
-    padding: 8px;
+
     text-align: left;
 }
 
@@ -87,4 +100,15 @@ body{
 .nothing{
     display: flex;
     flex-direction: row;
+}
+
+.submitBtn {
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+}
+.submitBtn:hover {
+    background-color: #cfcfcf;
+ 
 }
