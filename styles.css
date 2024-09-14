@@ -8,35 +8,55 @@
     margin: 20px;
   
 }
+.extra{
+    align-items: center;
+    padding-left: 40px;
+
+}
 
 .labels{
     text-align: left;
-    padding-left: 35px;
+    padding-left: 20px;
 
+}
+.white-container-one{
+    width: 80%;
+    height: 35px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding-left: 30px;
+}
+.white-container-two{
+    width: 80%;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding-left: 30px;
 }
 
 
 .desc-input-field {
-    width: 85%;
-    height: 300px;
+    width: 90%;
+    height: 290px;
     border: none;
-    border-radius: 20px;
+    margin-right: 20px;
     
 }
 .input-field {
-    width: 85%;
+    width: 80%;
     height: 30px;
     border: none;
     border-radius: 20px;
 }
 .date-input-field {
-    width: 75%;
+    width: 60%;
 }
 .date-input-container {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-right: 5px;
     
 }
 .date-label-one{

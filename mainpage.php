@@ -13,28 +13,36 @@
             <h1>New Task</h1>
             <form action = "taskmanagement.php"  method="POST" id = "contact-form">
 
-                <div class="labels">
+               <div class ="extra">
+                    <div class="labels">
                     <label for="title"><b>Task Title</b></label><br><br>
-                </div>
-                <input type="text" id="title" name="title" placeholder="  Type your task name"  class="input-field" value=""><br><br>
+                    </div>
+                    <div class="white-container-one">
+                    <input type="text" id="title" name="title" placeholder="  Type your task name"  class="input-field" value=""><br><br>
+                    </div><br>
 
-                <div class="labels">
+               
+                    <div class="labels">
                     <label for="description"><b>Task Description</b></label><br><br>
-                </div>          
-                    <textarea class="desc-input-field" placeholder="  Type your task description"  id="description" name="description"></textarea><br><br><br>
+                    </div> 
+                    <div class="white-container-two">         
+                    <textarea class="desc-input-field" placeholder=" Type your task description"  id="description" name="description"></textarea><br><br><br>
+                    </div><br>
+                    <div class="labels">
+                    <label for="date-due"><b>Due Date</b></label><br><br>
 
-                <div class="labels">
-                    <label for="start-date"><b>Due Date</b></label><br><br>
-                </div>
-
-                <div class="date-input-container"> 
+                    <div class="date-input-container"> 
                     <div class="date-label-one">
-                        <input type="date" id="start-date" name="start-date" class="date-input-field" value="">
+                        <input type="date" id="date-due" name="date-due" class="date-input-field" value="">
                     </div>
                     <div class="date-label-two">
-                        <input type="date" id="end-date" name="end-date" class="date-input-field" value="">
+                        <input type="time" id="time-due" name="time-due" class="date-input-field" value="">
                     </div>
                 </div><br><br>
+                </div>
+              </div>
+
+                
                 <button type="submit" name="create" class="submitBtn">CREATE</button>
             </form>
         </div>
