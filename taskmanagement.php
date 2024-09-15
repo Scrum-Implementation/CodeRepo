@@ -1,6 +1,15 @@
 <?php
 
-include 'connection.php';
+$servername = "localhost:3306";
+$username = "root";
+$password = "";
+$dbname = "todo_db";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
@@ -18,10 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         try {
 
-            $due_date_obj = new DateTime($due_date . ' ' . $end_time);
-            $today_obj = new DateTime($today);
+            $due_date_and_time = new DateTime($due_date . " " . $end_time, new DateTimeZone('Asia/Manila'));
+            $today = new DateTime('now', new DateTimeZone('Asia/Manila'));
 
-            if ($due_date_obj < $today_obj) {
+            if ($due_date_and_time < $today) {
                 $error_message = 'Due date and time cannot be in the past.';
             } else {
                 
@@ -45,5 +54,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
 
