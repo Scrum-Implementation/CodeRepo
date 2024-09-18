@@ -1,15 +1,6 @@
 <?php
 
-$servername = "localhost:3306";
-$username = "root";
-$password = "";
-$dbname = "todo_db";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'connection.php';
 
 ?>
 
@@ -44,6 +35,7 @@ if ($conn->connect_error) {
     }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +48,7 @@ if ($conn->connect_error) {
     <div class="nothing">
         <div class = "container">
             <h1>New Task</h1>
-            <form action = "edit.php?id=<?php echo $id; ?>"  method="POST" id = "contact-form">
+            <form action = "editdata.php?id=<?php echo $id; ?>"  method="POST" id = "contact-form">
 
                <div class ="extra">
                     <div class="labels">
@@ -71,7 +63,7 @@ if ($conn->connect_error) {
                     <label for="description"><b>Task Description</b></label><br><br>
                     </div> 
                     <div class="white-container-two">         
-                    <textarea class="desc-input-field" placeholder=" Type your task description"  id="description" name="description"><?php echo $row['description']; ?></textarea><br><br><br>
+                    <textarea class="desc-input-field" placeholder=" Type your task description"  id="description" name="description"> <?php echo $row['description']; ?></textarea><br><br><br>
                     </div><br>
                     <div class="labels">
                     <label for="date-due"><b>Due Date</b></label><br><br>
@@ -103,7 +95,7 @@ if ($conn->connect_error) {
                 </thead>
                 <tbody>
 
-                    <?php  include 'display.php';  ?>
+                    <?php  include 'displaydata.php';  ?>
                                   
                 </tbody>
             </table>

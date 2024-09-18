@@ -11,14 +11,14 @@
     <div class="nothing">
         <div class = "container">
             <h1>New Task</h1>
-            <form action = "taskmanagement.php"  method="POST" id = "contact-form">
+            <form action="taskmanagement.php"  method="POST" id="contact-form">
 
                <div class ="extra">
                     <div class="labels">
                     <label for="title"><b>Task Title</b></label><br><br>
                     </div>
                     <div class="white-container-one">
-                    <input type="text" id="title" name="title" placeholder="  Type your task name"  class="input-field" value=""><br><br>
+                    <input type="text" id="name" name="name" placeholder=" Type your task name"  class="input-field" required><br><br>
                     </div><br>
 
                
@@ -26,24 +26,23 @@
                     <label for="description"><b>Task Description</b></label><br><br>
                     </div> 
                     <div class="white-container-two">         
-                    <textarea class="desc-input-field" placeholder=" Type your task description"  id="description" name="description"></textarea><br><br><br>
+                    <textarea class="desc-input-field" placeholder=" Type your task description"  id="description" name="description" required></textarea><br><br><br>
                     </div><br>
+
                     <div class="labels">
                     <label for="date-due"><b>Due Date</b></label><br><br>
 
                     <div class="date-input-container"> 
                     <div class="date-label-one">
-                        <input type="date" id="date-due" name="date-due" class="date-input-field" value="">
+                        <input type="date" id="due_date" name="due_date" class="date-input-field" required>
                     </div>
                     <div class="date-label-two">
-                        <input type="time" id="time-due" name="time-due" class="date-input-field" value="">
+                        <input type="time" id="end_time" name="end_time" class="time-input-field" required>
                     </div>
                 </div><br><br>
                 </div>
               </div>
-
-                
-                <button type="submit" name="create" class="submitBtn">CREATE</button>
+                <button type="submit" class="submitBtn">CREATE</button>
             </form>
         </div>
     
@@ -57,10 +56,8 @@
                     </tr>
                 </thead>
                 <tbody>
-
-                    <?php  include 'fetchdata.php';  ?>
-                                  
-                </tbody>
+                <?php include 'displaydata.php'; ?>
+                </tbody>      
             </table>
         </div>
     </div>

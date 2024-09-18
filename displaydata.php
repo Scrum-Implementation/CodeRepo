@@ -1,18 +1,15 @@
 <?php
 
-$servername = "localhost:3306";
-$username = "root";
-$password = "";
-$dbname = "todo_db";
+include 'connection.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 $sql = "SELECT * FROM todos";
 $result = $conn->query($sql);
+
+$edit_img = 'https://cdn-icons-png.flaticon.com/512/84/84380.png';
+$delete_img ='https://icons.veryicon.com/png/o/construction-tools/coca-design/delete-189.png';
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
@@ -31,9 +28,17 @@ if ($result->num_rows > 0) {
         $conn->query($sql);
            
         echo "<tr>
-        <td>" . $row["name"] . "<br>" . $row["description"] . "<br>" .
-        "<a href='editdata.php?id=" . $row["id"] . "' class='button'>Edit</a></td>
-        <td>" . $row["due_date"] . "<br>" . $end_time . "</td>
+        <td><a href='editdata.php? id=" . $row["id"] . "' class='edit-button'>
+            <img src='". $edit_img ."'>
+            </a>
+            <strong class='stronk'>" . $row["name"] . "</strong><br>
+
+            <a href='editdata.php? id=" . $row["id"] . "' class='delete-button'>
+            <img src='". $delete_img ."'>
+            </a>
+
+            <i>" . $row["description"] . "</i><br></td>
+        <td><strong>" . $row["due_date"] . "</strong><br><i>" . $end_time . "</i></td>
         <td>" . $row["status"] . "</td>
         </tr>";
     }

@@ -1,22 +1,19 @@
 <?php
 
-$servername = "localhost:3306";
-$username = "root";
-$password = "";
-$dbname = "todo_db";
+include 'connection.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    var_dump($_POST);
     
-    $title = $conn->real_escape_string(trim($_POST['title']));
-    $description = $conn->real_escape_string(trim($_POST['description']));
-    $due_date = isset($_POST['due-date']) ? $conn->real_escape_string(trim($_POST['due-date'])) : '';
-    $end_time = isset($_POST['end-time']) ? $conn->real_escape_string(trim($_POST['end-time'])) : '';
+    $title = $_POST['name'];
+    $description = $_POST['description'];
+    $due_date = isset($_POST['due_date']) ? $_POST['due_date']: '';
+    $end_time = isset($_POST['end_time']) ? $_POST['end_time']: '';
 
     $today = date('Y-m-d');
     
@@ -37,11 +34,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $sql = "INSERT INTO todos (name, description, due_date, end_time) 
                         VALUES ('$title', '$description', '$due_date', '$end_time')";
 
-                if ($conn->query($sql) === TRUE) {
+                if ($conn->query($sql)== TRUE) {
                     header("Location: mainpage.php");
                     exit;
                 } else {
+                    exit;
                     $error_message = "Error: " . $sql . "<br>" . $conn->error;
+                    
                 }
             }
         } catch (Exception $e) {
