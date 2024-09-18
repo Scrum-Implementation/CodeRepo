@@ -1,3 +1,34 @@
+<?php
+
+include 'connection.php';
+
+?>
+
+<?php
+    if(isset($_GET['id'])) {
+        $id = $_GET['id'];
+
+        $sql = "SELECT * FROM todos WHERE id = $id";
+        $result = $conn->query($sql);
+
+        $row = $result->fetch_assoc();
+    }
+?>
+
+<?php
+     if(isset($_POST['delete'])) {
+        
+        $sql = "DELETE FROM todos WHERE id = $id";
+        $result = $conn->query($sql);
+
+        if(!$result) {
+            die("Error: " . $sql . "<br>" . $conn->error);
+        } else {
+            header("Location: mainpage.php"); 
+            exit;
+        }
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,14 +42,14 @@
     <div class="nothing">
         <div class = "container">
             <h1>New Task</h1>
-            <form action="taskmanagement.php"  method="POST" id="contact-form">
+            <form action = "editdata.php?id=<?php echo $id; ?>"  method="POST" id = "contact-form">
 
                <div class ="extra">
                     <div class="labels">
                     <label for="title"><b>Task Title</b></label><br><br>
                     </div>
                     <div class="white-container-one">
-                    <input type="text" id="name" name="name" placeholder=" Type your task name"  class="input-field" required><br><br>
+                    <input type="text" id="title" name="title" placeholder="  Type your task name"  class="input-field" value="<?php echo $row['name']; ?>"><br><br>
                     </div><br>
 
                
@@ -26,23 +57,24 @@
                     <label for="description"><b>Task Description</b></label><br><br>
                     </div> 
                     <div class="white-container-two">         
-                    <textarea class="desc-input-field" placeholder=" Type your task description"  id="description" name="description" required></textarea><br><br><br>
+                    <textarea class="desc-input-field" placeholder=" Type your task description"  id="description" name="description"> <?php echo $row['description']; ?></textarea><br><br><br>
                     </div><br>
-
                     <div class="labels">
                     <label for="date-due"><b>Due Date</b></label><br><br>
 
                     <div class="date-input-container"> 
                     <div class="date-label-one">
-                        <input type="date" id="due_date" name="due_date" class="date-input-field" required>
+                        <input type="date" id="due-date" name="due-date" class="date-input-field" value="<?php echo $row['due_date']; ?>">
                     </div>
                     <div class="date-label-two">
-                        <input type="time" id="end_time" name="end_time" class="time-input-field" required>
+                        <input type="time" id="end-time" name="end-time" class="time-input-field" value="<?php echo $row['end_time']; ?>">
                     </div>
                 </div><br><br>
                 </div>
               </div>
-                <button type="submit" class="submitBtn">CREATE</button>
+
+                
+                <button type="submit" name="delete" class="submitBtn">Delete</button>
             </form>
         </div>
     
@@ -56,16 +88,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php include 'displaydata.php';  ?>
-                </tbody>      
+
+                    <?php  include 'displaydata.php';  ?>
+                                  
+                </tbody>
             </table>
         </div>
+
     </div>
-    
-   
-
-
-
 
 </body>
 </html>
