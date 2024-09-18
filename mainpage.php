@@ -33,10 +33,10 @@
 
                     <div class="date-input-container"> 
                     <div class="date-label-one">
-                        <input type="date" id="date-due" name="date-due" class="date-input-field" value="">
+                        <input type="date" id="due-date" name="due-date" class="date-input-field" value="">
                     </div>
                     <div class="date-label-two">
-                        <input type="time" id="time-due" name="time-due" class="date-input-field" value="">
+                        <input type="time" id="end-time" name="end-time" class="date-input-field" value="">
                     </div>
                 </div><br><br>
                 </div>
@@ -58,7 +58,7 @@
                 </thead>
                 <tbody>
 
-                    <?php  include 'fetchdata.php';  ?>
+                    <?php  include 'displaydata.php';  ?>
                                   
                 </tbody>
             </table>
