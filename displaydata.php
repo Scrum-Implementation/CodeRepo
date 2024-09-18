@@ -1,15 +1,6 @@
 <?php
 
-$servername = "localhost:3306";
-$username = "root";
-$password = "";
-$dbname = "todo_db";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'connection.php';
 
 $sql = "SELECT * FROM todos";
 $result = $conn->query($sql);
@@ -31,8 +22,8 @@ if ($result->num_rows > 0) {
         $conn->query($sql);
            
         echo "<tr>
-        <td>" . $row["name"] . "<br>" . $row["description"] . "<br>" .
-        "<a href='editdata.php?id=" . $row["id"] . "' class='button'>Edit</a></td>
+        <td>" . "<a href='editdata.php?id=" . $row["id"] . "' class='button'>Edit</a>" . $row["name"] . "<br>" . 
+        "<a href='deletedata.php?id=" . $row["id"] . "' class='button'>Delete</a>" . $row["description"] . "</td>
         <td>" . $row["due_date"] . "<br>" . $end_time . "</td>
         <td>" . $row["status"] . "</td>
         </tr>";
