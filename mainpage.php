@@ -56,7 +56,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php include 'displaydata.php';  ?>
+                <?php include 'displaydata.php'; ?>
                 </tbody>      
             </table>
         </div>

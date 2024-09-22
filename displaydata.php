@@ -1,4 +1,4 @@
-git reset --hard ORIG_HEAD <?php
+<?php
 
 include 'connection.php';
 
