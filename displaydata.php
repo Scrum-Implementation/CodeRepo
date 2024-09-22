@@ -36,12 +36,12 @@ if ($result->num_rows > 0) {
             <i>" . $row["description"] . "</i><br>
         </td>
         <td><strong>" . $row["due_date"] . "</strong><br><i>" . $end_time . "</i></td>
-        <td>" . $row["status"] . "
+        <td><strong>" . $row["status"] . "
             <label style='cursor:pointer;'>
                 <input type='checkbox' id='task-box" . $row["id"] . "' value='1' data-id='" . $row["id"] . "' " . $check . " style='display:none;'>
                 <img src='" . ($check ? $checkbox_checked_img : $checkbox_unchecked_img) . "' alt='checkbox' class='checkbox-img' data-checked-img='" . $checkbox_checked_img . "' data-unchecked-img='" . $checkbox_unchecked_img . "'>
             </label>
-        </td>
+        </td></strong>
         </tr>";
     }
 } else {
