@@ -39,7 +39,11 @@ if ($result->num_rows > 0) {
 
             <i>" . $row["description"] . "</i><br></td>
         <td><strong>" . $row["due_date"] . "</strong><br><i>" . $end_time . "</i></td>
-        <td>" . $row["status"] . "</td>
+        <td>
+            <form method='POST'>
+                <input type='hidden' name='id' value='" . $row["id"] . "'>
+                <input type='checkbox' name='status' value='Completed' onchange='this.form.submit()'> " . $status . "
+            </form></td>
         </tr>";
     }
 } else {
