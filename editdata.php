@@ -47,7 +47,7 @@ include 'connection.php';
     <div class="nothing">
         <div class = "container">
             <h1>New Task</h1>
-            <form action = "edit.php?id=<?php echo $id; ?>"  method="POST" id = "contact-form">
+            <form action = "editdata.php?id=<?php echo $id; ?>"  method="POST" id = "contact-form">
 
                <div class ="extra">
                     <div class="labels">
