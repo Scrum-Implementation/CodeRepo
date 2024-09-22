@@ -70,10 +70,10 @@ include 'connection.php';
 
                     <div class="date-input-container"> 
                     <div class="date-label-one">
-                        <input type="date" id="due-date" name="due-date" class="date-input-field" value="<?php echo $row['due_date']; ?>">
+                        <input type="date" id="due_date" name="due_date" class="date-input-field" value="<?php echo $row['due_date']; ?>">
                     </div>
                     <div class="date-label-two">
-                        <input type="time" id="end-time" name="end-time" class="time-input-field" value="<?php echo $row['end_time']; ?>">
+                        <input type="time" id="end_time" name="end_time" class="time-input-field" value="<?php echo $row['end_time']; ?>">
                     </div>
                 </div><br><br>
                 </div>

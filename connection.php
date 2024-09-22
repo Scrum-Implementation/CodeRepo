@@ -1,6 +1,6 @@
 <?php
 
-$servername = "localhost:YOUR_PORT";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "todo";
