@@ -190,7 +190,7 @@ body{
 }
 
 input[type="date"], input[type="time"] {
-    width:75%;  /* Ensures the input fields fill the available space */
+    width:75%; 
     border-radius: 20px;
     border: none;
     padding: 15px;
@@ -202,3 +202,10 @@ input[type="date"], input[type="time"] {
     margin-left: 10px;
 }
 
+
+.checkbox-img {
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+    margin-left: 10px;
+}
