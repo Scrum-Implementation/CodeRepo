@@ -63,7 +63,7 @@ $conn->close();
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('click', function(event) {
-            const imgElement = this.nextElementSibling; // Get the image next to the checkbox
+            const imgElement = this.nextElementSibling;
             const result = checkbox.checked ? 
                 confirm("Are you sure you want to mark this task as completed?") :
                 confirm("Are you sure you want to mark this task as in progress?");
