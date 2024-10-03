@@ -6,13 +6,11 @@ ini_set('display_errors', 1);
 include 'connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    var_dump($_POST);
     
-    $title = $_POST['name'];
+    $title = $_POST['title'];
     $description = $_POST['description'];
-    $due_date = isset($_POST['due_date']) ? $_POST['due_date']: '';
-    $end_time = isset($_POST['end_time']) ? $_POST['end_time']: '';
+    $due_date = $_POST['due-date'];
+    $end_time = $_POST['end-time'];
 
     if (empty($title) || empty($description) || empty($due_date) || empty($end_time)) {
         $error_message = 'All fields are required.';

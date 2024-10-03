@@ -18,10 +18,10 @@ include 'connection.php';
 <?php
     if(isset($_POST['update'])) {
 
-        $title = $conn->real_escape_string(trim($_POST['title']));
-        $description = $conn->real_escape_string(trim($_POST['description']));
-        $due_date = isset($_POST['due_date']) ? $conn->real_escape_string(trim($_POST['due_date'])) : '';
-        $end_time = isset($_POST['end_time']) ? $conn->real_escape_string(trim($_POST['end_time'])) : '';
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+        $due_date = $_POST['due-date'];
+        $end_time = $_POST['end-time'];
 
         $sql = "UPDATE todos SET name = '$title', description = '$description', due_date = '$due_date', end_time = '$end_time' WHERE id = $id";
         $result = $conn->query($sql);

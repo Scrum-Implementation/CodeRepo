@@ -21,8 +21,15 @@ if ($result->num_rows > 0) {
             $sql = "UPDATE todos SET status='$status' WHERE id=".$row["id"];
             $conn->query($sql);
         }
+        
 
-        $check = $row["status"] === "Completed" ? "checked" : "";
+        if($row["status"] != "Completed") {
+            $check = "";
+            $checkbox_img = $checkbox_unchecked_img;
+        }else{
+            $check = "checked";
+            $checkbox_img = $checkbox_checked_img;
+        }
 
         echo "<tr>
         <td>
@@ -36,12 +43,11 @@ if ($result->num_rows > 0) {
             <i>" . $row["description"] . "</i><br>
         </td>
         <td><strong>" . $row["due_date"] . "</strong><br><i>" . $end_time . "</i></td>
-        <td><strong>" . $row["status"] . "
-            <label style='cursor:pointer;'>
-                <input type='checkbox' id='task-box" . $row["id"] . "' value='1' data-id='" . $row["id"] . "' " . $check . " style='display:none;'>
-                <img src='" . ($check ? $checkbox_checked_img : $checkbox_unchecked_img) . "' alt='checkbox' class='checkbox-img' data-checked-img='" . $checkbox_checked_img . "' data-unchecked-img='" . $checkbox_unchecked_img . "'>
-            </label>
-        </td></strong>
+        <td>" . $row["status"] . "
+        <label style='cursor:pointer;'>
+            <input type='checkbox' id='task-box" . $row["id"] . "' value='1' data-id='" . $row["id"] . "' " . $check . " style='display:none;'>
+            <img src='" . $checkbox_img . "' alt='checkbox' class='checkbox-img'>
+        </label></td>
         </tr>";
     }
 } else {
@@ -66,15 +72,16 @@ $conn->close();
                 const status = checkbox.checked ? 'Completed' : 'In Progress';
 
                 imgElement.src = checkbox.checked ? 
-                    this.getAttribute('data-checked-img') : 
-                    this.getAttribute('data-unchecked-img');
+                    '<?php echo $checkbox_checked_img; ?>' : 
+                    '<?php echo $checkbox_unchecked_img; ?>';
                 
                 window.location.href = `updatestatus.php?id=${id}&status=${status}`;
             } else {
                 checkbox.checked = false; 
-                imgElement.src = this.checked ? 
-                    this.getAttribute('data-checked-img') : 
-                    this.getAttribute('data-unchecked-img');
+                
+                imgElement.src = checkbox.checked ? 
+                    '<?php echo $checkbox_checked_img; ?>' : 
+                    '<?php echo $checkbox_unchecked_img; ?>';
             }
         });
     });
