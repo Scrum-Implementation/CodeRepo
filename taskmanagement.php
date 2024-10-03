@@ -9,8 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $title = $_POST['title'];
     $description = $_POST['description'];
-    $due_date = $_POST['due-date'];
-    $end_time = $_POST['end-time'];
+    $due_date = $_POST['due_date'];
+    $end_time = $_POST['end_time'];
 
     if (empty($title) || empty($description) || empty($due_date) || empty($end_time)) {
         $error_message = 'All fields are required.';
