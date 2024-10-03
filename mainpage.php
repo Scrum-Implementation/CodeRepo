@@ -10,7 +10,7 @@
 <body>
     <div class="nothing">
         <div class = "container">
-            <h1>New Task</h1>
+            <h1>Create New Task</h1>
             <form action = "taskmanagement.php"  method="POST" id = "contact-form">
 
                <div class ="extra">

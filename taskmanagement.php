@@ -7,7 +7,7 @@ include 'connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    $title = $_POST['title'];
+    $title = $_POST['title']git ;
     $description = $_POST['description'];
     $due_date = $_POST['due-date'];
     $end_time = $_POST['end-time'];
