@@ -20,8 +20,8 @@ include 'connection.php';
 
         $title = $conn->real_escape_string(trim($_POST['title']));
         $description = $conn->real_escape_string(trim($_POST['description']));
-        $due_date = isset($_POST['due-date']) ? $conn->real_escape_string(trim($_POST['due-date'])) : '';
-        $end_time = isset($_POST['end-time']) ? $conn->real_escape_string(trim($_POST['end-time'])) : '';
+        $due_date = isset($_POST['due_date']) ? $conn->real_escape_string(trim($_POST['due_date'])) : '';
+        $end_time = isset($_POST['end_time']) ? $conn->real_escape_string(trim($_POST['end_time'])) : '';
 
         $sql = "UPDATE todos SET name = '$title', description = '$description', due_date = '$due_date', end_time = '$end_time' WHERE id = $id";
         $result = $conn->query($sql);
